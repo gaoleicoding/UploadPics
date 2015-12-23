@@ -200,6 +200,7 @@ public class UploadPicActivity extends AppCompatActivity implements View.OnClick
                                 getString(R.string.no_more_than_3));
                         return;
                     } else {
+                        //点击添加图片
                         edit_photo_fullscreen_layout
                                 .setVisibility(View.VISIBLE);
                         get_photo_layout_in_from_down = AnimationUtils
@@ -209,6 +210,7 @@ public class UploadPicActivity extends AppCompatActivity implements View.OnClick
                                 .startAnimation(get_photo_layout_in_from_down);
                     }
                 } else {
+                    //点击图片查看大图
                     showImageViewPager(position, pictureUrlList,
                             uploadImgUrlList, "local", "upload");
                     viewpagerPosition = position - 1;
