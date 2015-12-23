@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/title_layout"
+        layout="@layout/titlebar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="70dp" />
+
+    <RelativeLayout
+        android:id="@+id/upload_photo_layout"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@id/title_layout"
+        android:layout_marginTop="30dp"
+        android:background="#f3f3f3"
+        android:clickable="true"
+        android:onClick="toUploadPhotoActvity">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="20dp"
+            android:text="@string/upload_photo"
+            android:textSize="18sp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/upload_pic_layout"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@id/upload_photo_layout"
+        android:layout_marginTop="30dp"
+        android:background="#f3f3f3"
+        android:clickable="true"
+        android:onClick="toUploadPicActvity">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="20dp"
+            android:text="@string/upload_pic"
+            android:textSize="18sp" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+   android:descendantFocusability="blocksDescendants"
+    android:orientation="vertical"
+    android:paddingBottom="10dp" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+          >
+
+        <com.example.administrator.uploadphoto.CircleImageView
+            android:id="@+id/user_photo"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="10dp"
+            android:src="@drawable/personal_default_photo" />
+
+        <TextView
+            android:id="@+id/user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/user_photo"
+            android:visibility="gone"
+            android:textColor="@color/aa_black"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:id="@+id/sex_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_toRightOf="@id/user_name"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/game_playing_prefix"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/user_name"
+            android:layout_marginTop="2dp"
+            android:layout_toRightOf="@id/user_photo"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:paddingLeft="6dp"
+            android:paddingRight="6dp"
+            android:text="@string/playing"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/game_playing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/user_name"
+            android:layout_marginLeft="1dp"
+            android:layout_marginRight="5dp"
+            android:layout_toRightOf="@id/game_playing_prefix"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:visibility="gone"
+            android:textColor="@color/color_838483"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/theme_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/user_photo"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="15dp"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textColor="@color/aa_black"
+            android:textSize="18sp" />
+
+
+
+        <TextView
+            android:id="@+id/theme_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/theme_title"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="5dp"
+            android:ellipsize="end"
+            android:maxLines="4"
+            android:textColor="@color/gray_color_99999a"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/theme_img1"
+            android:layout_width="120dp"
+            android:layout_height="90dp"
+            android:layout_below="@id/theme_desc"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:scaleType="center"
+            />
+        <ImageView
+            android:id="@+id/theme_img2"
+            android:layout_width="120dp"
+            android:layout_height="90dp"
+            android:layout_below="@id/theme_desc"
+            android:layout_toRightOf="@id/theme_img1"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:scaleType="center"
+            />
+        <ImageView
+            android:id="@+id/theme_img3"
+            android:layout_width="120dp"
+            android:layout_height="90dp"
+            android:layout_below="@id/theme_desc"
+            android:layout_toRightOf="@id/theme_img2"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:scaleType="center"
+            />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="10dp" >
+
+        <TextView
+            android:id="@+id/publish_theme_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/gray_color_99999a"
+            android:textSize="16sp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:src="@mipmap/theme_item_reply" />
+
+            <TextView
+                android:id="@+id/theme_reply_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="5dp"
+                android:textColor="@color/gray_color_99999a"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:src="@mipmap/theme_item_praise" />
+
+            <TextView
+                android:id="@+id/theme_praise_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="10dp"
+                android:textColor="@color/gray_color_99999a"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <include
+        android:id="@+id/title_layout"
+        layout="@layout/titlebar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="70dp" />
+
+    <TextView
+        android:id="@+id/upload"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:paddingTop="27dip"
+        android:paddingRight="15dip"
+        android:paddingLeft="15dip"
+        android:paddingBottom="15dip"
+        android:text="@string/upload"
+        android:textColor="#ffffff"
+        android:textSize="18sp" />
+    <LinearLayout
+        android:id="@+id/add_theme_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/title_layout"
+        android:background="@color/cc_white"
+        android:clickable="true"
+        android:orientation="vertical"
+
+        >
+
+        <EditText
+            android:id="@+id/theme_title_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="20dp"
+            android:background="@drawable/comment_edittext_round_corner_bg"
+            android:padding="5dp" >
+            <requestFocus />
+        </EditText>
+
+        <LinearLayout
+            android:id="@+id/theme_desc_edit_layout"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/comment_edittext_round_corner_bg"
+            android:orientation="vertical" >
+
+            <EditText
+                android:id="@+id/theme_desc_edit"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="top|left"
+                android:background="#00000000"
+                android:padding="5dp" />
+        </LinearLayout>
+
+        <GridView
+            android:id="@+id/add_image_gridview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:cacheColorHint="#00000000"
+            android:fadingEdge="none"
+            android:listSelector="#00000000"
+            android:numColumns="4"
+            android:scrollbars="none" />
+    </LinearLayout>
+    <RelativeLayout
+        android:id="@+id/edit_photo_fullscreen_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#55000000"
+        android:clickable="true"
+        android:onClick="hideEditPhotoLayout"
+        android:focusable="true"
+        android:visibility="gone" >
+
+        <RelativeLayout
+            android:id="@+id/edit_photo_outer_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:id="@+id/edit_photo_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/take_picture_layout_round_corner_bg"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/take_picture"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="@string/take_picture"
+                    android:textColor="@color/blue_text"
+                    android:textSize="20sp" />
+
+                <View style="@style/horizontal_divider" >
+                </View>
+
+                <TextView
+                    android:id="@+id/select_local_picture"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="@string/select_local_picture"
+                    android:textColor="@color/blue_text"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/edit_photo_layout"
+                android:layout_margin="10dp"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/cancel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/video_order_layout_round_corner_bg"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="@string/cancel"
+                    android:textColor="@color/blue_text"
+                    android:clickable="true"
+                    android:onClick="hideEditPhotoLayout"
+                    android:textSize="20sp" />
+            </LinearLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/display_big_image_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/ee_black"
+        android:visibility="gone" >
+
+        <com.example.administrator.uploadphoto.MyViewPager
+            android:id="@+id/image_viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_alignParentBottom="true" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/position_in_total"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:textColor="@color/cc_white"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:id="@+id/delete_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:paddingBottom="20dp"
+                    android:paddingLeft="20dp"
+                    android:src="@drawable/setting_clear_cache" />
+            </LinearLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/show_upload_pic_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/title_layout"
+        android:background="@color/cc_white"
+        android:visibility="gone"
+         >
+    <ListView
+        android:id="@+id/theme_listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:cacheColorHint="#00000000"
+        android:divider="@color/item_selected_gray"
+        android:dividerHeight="10dp"
+        android:fadingEdge="none"
+        android:listSelector="#00000000" />
+        </RelativeLayout>
+    <include
+        android:id="@+id/uploading_photo_progress"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        layout="@layout/progress_layout"
+        android:clickable="true"
+        android:visibility="gone" />
+
+</RelativeLayout>

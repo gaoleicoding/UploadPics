@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <include
+        android:id="@+id/title_layout"
+        layout="@layout/titlebar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="70dp" />
+
+    <RelativeLayout
+        android:id="@+id/update_photo_layout"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="30dp"
+        android:clickable="true"
+        android:onClick="showEditPhotoLayout"
+        android:layout_below="@id/title_layout"
+        android:background="#f3f3f3"
+        android:focusable="true" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:text="@string/photo"
+            android:textSize="16sp" />
+
+        <com.example.administrator.uploadphoto.CircleImageView
+
+            android:id="@+id/my_photo_image"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/personal_default_photo" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/edit_photo_fullscreen_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#55000000"
+        android:clickable="true"
+        android:onClick="hideEditPhotoLayout"
+        android:focusable="true"
+        android:visibility="gone" >
+
+        <RelativeLayout
+            android:id="@+id/edit_photo_outer_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:id="@+id/edit_photo_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/take_picture_layout_round_corner_bg"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/take_picture"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="@string/take_picture"
+                    android:textColor="@color/blue_text"
+                    android:textSize="20sp" />
+
+                <View style="@style/horizontal_divider" >
+                </View>
+
+                <TextView
+                    android:id="@+id/select_local_picture"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="@string/select_local_picture"
+                    android:textColor="@color/blue_text"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/edit_photo_layout"
+                android:layout_margin="10dp"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/cancel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/video_order_layout_round_corner_bg"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="@string/cancel"
+                    android:textColor="@color/blue_text"
+                    android:clickable="true"
+                    android:onClick="hideEditPhotoLayout"
+                    android:textSize="20sp" />
+            </LinearLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+    <include
+        android:id="@+id/uploading_photo_progress"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        layout="@layout/progress_layout"
+        android:clickable="true"
+        android:visibility="gone" />
+</RelativeLayout>

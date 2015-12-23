@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:background="#55000000" >
+<RelativeLayout 
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerInParent="true"
+    android:background="@drawable/login_progress_round_corner_bg"
+    android:paddingLeft="10dp"
+    android:paddingTop="2dp"
+    android:paddingRight="10dp"
+    android:paddingBottom="2dp"
+     >
+    <ProgressBar
+        android:id="@+id/progressbar"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:indeterminateBehavior="repeat"
+        android:indeterminateDrawable="@anim/login_progress_anim"
+        android:indeterminateOnly="true" />
+
+    <TextView
+        android:id="@+id/progress_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/progressbar"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="5dp"
+        android:textColor="#999999"
+        android:text="@string/uploading"
+        android:textSize="16sp" />
+</RelativeLayout>
+</RelativeLayout>
